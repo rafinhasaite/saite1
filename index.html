@@ -7,18 +7,17 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="video-container">
+    <div class="background-container">
         <video autoplay muted loop id="background-video">
             <source src="Video.mp4" type="video/mp4">
             Seu navegador não suporta vídeos HTML5.
         </video>
+        <div id="background-image"></div>
     </div>
-    <div id="background-image"></div>
     <script>
         var nome = prompt('Qual seu nome de guerra?');
         document.addEventListener('DOMContentLoaded', (event) => {
-            var welcomeMessage = document.getElementById('welcome-message');
-            welcomeMessage.innerText = 'Bem-vinde ao meu site ' + nome;
+            document.getElementById('welcome-message').innerText = 'Bem-vinde ao meu site ' + nome;
 
             if (nome.toLowerCase() === 'rafael') {
                 var backgroundImage = document.getElementById('background-image');
