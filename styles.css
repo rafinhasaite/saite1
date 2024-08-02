@@ -1,14 +1,11 @@
 body {
     margin: 0;
     padding: 0;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    overflow: hidden;
+    overflow: hidden; /* Garante que o conteúdo não cause rolagem */
 }
 
 .video-container {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -18,13 +15,17 @@ body {
 }
 
 video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transform: translate(-50%, -50%);
 }
 
 #background-image {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -41,4 +42,3 @@ video {
     color: white; /* Adapta o texto para ser visível sobre o fundo */
     padding: 20px;
 }
-
