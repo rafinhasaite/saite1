@@ -1,7 +1,9 @@
-body, html {
+body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
     overflow: hidden;
 }
 
@@ -12,26 +14,31 @@ body, html {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: -1;
+    z-index: 1; /* Garante que o vídeo fique abaixo da imagem */
 }
 
-#background-video {
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#background-image {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-size: cover;
+    background-position: center;
+    z-index: 2; /* Garante que a imagem fique acima do vídeo */
+    display: none; /* Inicialmente oculta */
 }
 
 .content {
     position: relative;
-    z-index: 1;
-    color: white;
-    text-align: center;
-    margin-top: 20%;
+    z-index: 3; /* Garante que o conteúdo fique acima da imagem e do vídeo */
+    color: white; /* Adapta o texto para ser visível sobre o fundo */
+    padding: 20px;
 }
+
